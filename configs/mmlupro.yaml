@@ -1,0 +1,18 @@
+dataset: mmlupro  # Dataset identifier registered with the task factory.
+task: health  # Subject category inside MMLU-Pro to evaluate.
+n_initial_pts: 20  # Initial data points collected before BO begins.
+n_bo_iterations: 200  # Total number of Bayesian optimization rounds to run.
+hf_model: Qwen/Qwen3-8B  # Hugging Face model name served by vLLM.
+n_samples: 16  # Number of completions sampled per question for self-consistency.
+temperature: 0.7  # Sampling temperature applied to the LLM.
+seed: 0  # Global random seed.
+port: 8000  # Local port used to reach the vLLM server.
+save_dir: runs  # Root directory where training artifacts are stored.
+
+train:
+  num_workers: 128  # Thread pool workers for parallel validation requests as vLLM handles numbers of parallel requests internally.
+
+test:
+  k: 10  # Top-k exemplars retrieved for heuristic baselines.
+  text_embedding_model: NovaSearch/stella_en_400M_v5  # Embedding model used for nearest/diversity baselines.
+  prompt_type: s2s_query  # specific to the text embedding model.

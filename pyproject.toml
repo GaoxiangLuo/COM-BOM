@@ -1,0 +1,70 @@
+[project]
+name = "com-bom"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "antlr4-python3-runtime==4.11",
+    "botorch==0.10.0",
+    "datasets>=3.6.0",
+    "disjoint-set>=0.8.0",
+    "flashinfer-python>=0.2.7.post1",
+    "matplotlib>=3.10.3",
+    "openai>=1.93.0",
+    "pymoo>=0.6.1.5",
+    "ruff>=0.12.1",
+    "seaborn>=0.13.2",
+    "sympy>=1.13.1",
+    "torch==2.6.0",
+    "vllm==0.8.5",
+    "nvidia-ml-py>=12.0.0",
+    "pyyaml>=6.0",
+    "sentence-transformers>=5.1.1",
+    "faiss-gpu-cu12>=1.12.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+# Minimal baseline: syntax errors, formatting, docstrings, and common bug patterns.
+select = [
+    "E",  # pycodestyle errors (readability)
+    "F",  # Pyflakes (correctness)
+    "I",  # isort (import hygiene)
+    "D",  # pydocstyle (documentation)
+    "B",  # flake8-bugbear (common pitfalls)
+]
+
+ignore = [
+    "D100",  # Allow modules without docstrings for now
+    "D104",  # Allow packages without docstrings
+    "D203",  # 1 blank line required before class docstring
+    "D213",  # Multi-line docstring summary should start at the second line
+    "COM812",  # Trailing comma handled by formatter
+    "ISC001",  # Implicit concat handled by formatter
+]
+
+[tool.ruff.lint.per-file-ignores]
+"test.py" = ["E501"]
+"tasks/*.py" = ["D"]
+"initial_pts.py" = ["ALL"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+known-first-party = ["combom", "tasks", "utils", "train"]
+force-single-line = false
+split-on-trailing-comma = true
+
+[tool.ruff.lint.flake8-type-checking]
+strict = true
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"
