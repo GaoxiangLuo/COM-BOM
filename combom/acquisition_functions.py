@@ -88,6 +88,7 @@ def get_acquisition_function(
         )
     return acqf, pareto_points
 
+
 ### Trust region search
 
 
@@ -134,7 +135,8 @@ def sample_within_tr(
     return x_samples
 
 
-## Methods below are implemented in botorch https://github.com/meta-pytorch/botorch/blob/main/botorch/optim/optimize.py 
+## Methods below are implemented in botorch https://github.com/meta-pytorch/botorch/blob/main/botorch/optim/optimize.py
+
 
 def _split_batch_eval_acqf(
     acq_function: AcquisitionFunction, X: Tensor, max_batch_size: int
@@ -460,5 +462,3 @@ def optimize_acqf_discrete_local_search(
     with torch.no_grad():
         acq_value = acq_function(candidates)  # compute joint acquisition value
     return candidates, acq_value
-
-
