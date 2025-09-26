@@ -26,7 +26,7 @@ Training and evaluation needs a locally-hosted LLM. The default config (`configs
 
 ```bash
 # 2xA100-40GB
-uv run vllm serve Qwen/Qwen3-8B --port 8000 --chat-template misc/qwen3_nonthinking.jinja --enable-prefix-caching --gpu-memory-utilization 0.75 --tensor-parallel-size 2
+uv run vllm serve Qwen/Qwen3-8B --port 8000 --chat-template misc/qwen3_nonthinking.jinja --enable-prefix-caching --gpu-memory-utilization 0.75 -tp 2
 
 # 1xA100-80GB / 1xH100-80GB
 uv run vllm serve Qwen/Qwen3-8B --port 8000 --chat-template misc/qwen3_nonthinking.jinja --enable-prefix-caching --gpu-memory-utilization 0.75

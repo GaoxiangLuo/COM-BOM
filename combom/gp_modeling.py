@@ -1,11 +1,12 @@
 """GP modelling utilities for binary exemplar-selection experiments."""
 
 import torch
-from botorch import fit_gpytorch_model
+from botorch import fit_gpytorch_mll
 from botorch.models import SingleTaskGP
 from botorch.models.fully_bayesian import MIN_INFERRED_NOISE_LEVEL
 from botorch.models.kernels import CategoricalKernel
 from botorch.models.transforms import Standardize
+from botorch.utils.constraints import LogTransformedInterval
 from gpytorch.constraints import GreaterThan
 from gpytorch.kernels import (
     ScaleKernel,
@@ -15,10 +16,8 @@ from gpytorch.mlls import ExactMarginalLogLikelihood
 from gpytorch.priors import GammaPrior, LogNormalPrior
 
 from .dimscaled_priors import (
-    LogTransformedInterval,
     get_kernel_hp_priors,
 )
-from .tanimoto_kernel import TanimotoKernel
 
 
 def get_fitted_gp_model(
@@ -39,7 +38,7 @@ def get_fitted_gp_model(
         train_y: Observed responses for the objective.
         train_yvar: Optional observation noise values.
         prior_choice: Either ``"standard"`` or ``"dimscaled"`` for kernel priors.
-        kernel_choice: Name of kernel to use (e.g. ``"categorical"``, ``"tanimoto"``).
+        kernel_choice: Name of kernel to use (e.g. ``"categorical"``).
         ard: If ``True`` enable automatic relevance determination.
         noise_type: One of ``{"standard", "high", "fixed"}`` controlling likelihood.
         fixed_noise_value: Noise level to use when ``noise_type == "fixed"``.
@@ -69,8 +68,6 @@ def get_fitted_gp_model(
     if prior_choice == "standard":
         if kernel_choice == "categorical":
             kernel = CategoricalKernel(ard_num_dims=input_dim if ard else None)
-        elif kernel_choice == "tanimoto":
-            kernel = TanimotoKernel()
         outputscale_prior = GammaPrior(torch.tensor(2.0, **tkwargs), torch.tensor(0.15, **tkwargs))
         outputscale_constraint = GreaterThan(1e-6)
         covar_module = ScaleKernel(
@@ -106,5 +103,5 @@ def get_fitted_gp_model(
         likelihood=likelihood,
     )
     mll = ExactMarginalLogLikelihood(model=gp_model, likelihood=gp_model.likelihood)
-    fit_gpytorch_model(mll)
+    fit_gpytorch_mll(mll)
     return gp_model

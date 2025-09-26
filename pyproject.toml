@@ -6,7 +6,7 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "antlr4-python3-runtime==4.11",
-    "botorch==0.10.0",
+    "botorch==0.13.0",
     "datasets>=3.6.0",
     "disjoint-set>=0.8.0",
     "flashinfer-python>=0.2.7.post1",
