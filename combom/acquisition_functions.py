@@ -88,6 +88,53 @@ def get_acquisition_function(
         )
     return acqf, pareto_points
 
+### Trust region search
+
+
+def sample_within_tr(
+    x_center: torch.Tensor,
+    n_points: int,
+    tr_radius: int,
+    discrete_choices,
+) -> torch.Tensor:
+    """Sample points within trust region by perturbing categorical variables.
+
+    Args:
+        x_center: Trust region center point (n_dims,)
+        n_points: Number of points to sample
+        tr_radius: Current trust region radius (max Hamming distance)
+        discrete_choices: List specifying number of categories for each dimension
+
+    Returns:
+        Sampled points tensor (n_points, n_dims)
+    """
+    device = x_center.device
+    dtype = x_center.dtype
+    n_dims = len(discrete_choices)
+
+    # Replicate center point
+    x_samples = x_center.clone() * torch.ones((n_points, n_dims), device=device, dtype=dtype)
+
+    # For each point, randomly perturb up to tr_radius dimensions
+    n_perturb = torch.randint(low=1, high=tr_radius + 1, size=(n_points,), device=device)
+
+    for i in range(n_points):
+        # Randomly choose which dimensions to perturb
+        dims_to_perturb = torch.randperm(n_dims, device=device)[: n_perturb[i]]
+        for dim in dims_to_perturb:
+            # Get current value for this dimension
+            current_val = x_samples[i, dim].item()
+            # Get all possible values except current
+            choices = [v.item() for v in discrete_choices[dim.item()] if v != current_val]
+            # Randomly select new value
+            if len(choices) > 0:  # Safety check in case of single category
+                new_val = np.random.choice(choices)
+                x_samples[i, dim] = new_val
+
+    return x_samples
+
+
+## Methods below are implemented in botorch https://github.com/meta-pytorch/botorch/blob/main/botorch/optim/optimize.py 
 
 def _split_batch_eval_acqf(
     acq_function: AcquisitionFunction, X: Tensor, max_batch_size: int
@@ -415,47 +462,3 @@ def optimize_acqf_discrete_local_search(
     return candidates, acq_value
 
 
-### Trust region search
-
-
-def sample_within_tr(
-    x_center: torch.Tensor,
-    n_points: int,
-    tr_radius: int,
-    discrete_choices,
-) -> torch.Tensor:
-    """Sample points within trust region by perturbing categorical variables.
-
-    Args:
-        x_center: Trust region center point (n_dims,)
-        n_points: Number of points to sample
-        tr_radius: Current trust region radius (max Hamming distance)
-        discrete_choices: List specifying number of categories for each dimension
-
-    Returns:
-        Sampled points tensor (n_points, n_dims)
-    """
-    device = x_center.device
-    dtype = x_center.dtype
-    n_dims = len(discrete_choices)
-
-    # Replicate center point
-    x_samples = x_center.clone() * torch.ones((n_points, n_dims), device=device, dtype=dtype)
-
-    # For each point, randomly perturb up to tr_radius dimensions
-    n_perturb = torch.randint(low=1, high=tr_radius + 1, size=(n_points,), device=device)
-
-    for i in range(n_points):
-        # Randomly choose which dimensions to perturb
-        dims_to_perturb = torch.randperm(n_dims, device=device)[: n_perturb[i]]
-        for dim in dims_to_perturb:
-            # Get current value for this dimension
-            current_val = x_samples[i, dim].item()
-            # Get all possible values except current
-            choices = [v.item() for v in discrete_choices[dim.item()] if v != current_val]
-            # Randomly select new value
-            if len(choices) > 0:  # Safety check in case of single category
-                new_val = np.random.choice(choices)
-                x_samples[i, dim] = new_val
-
-    return x_samples
