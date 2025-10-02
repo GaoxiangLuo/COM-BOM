@@ -2,12 +2,12 @@
 
 This repository contains the reference BoTorch implementation of COM-BOM for the following paper: <br/>
 
-> **[COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier]()**  
+> **[COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier](https://arxiv.org/abs/2510.01178)**  
 > [Gaoxiang Luo](https://gaoxiangluo.github.io/), [Aryan Deshwal](https://aryandeshwal.github.io/)    
 > *In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, 2025* 
 >
 
-[[`Paper`]()] [[`BibTeX`](#CitingCOM-BOM)]
+[[`Paper`](https://arxiv.org/abs/2510.01178)] [[`BibTeX`](#CitingCOM-BOM)]
 
 ---
 ## Quickstart
@@ -65,9 +65,10 @@ If you use COM-BOM in your research, find the code useful, or would like to ackn
 
 ```BibTeX
 @inproceedings{COMBOM,
-  author    = {Luo, Gaoxiang and Deshwal, Aryan},
-  title     = {COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier},
-  booktitle = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
-  year      = {2025},
+  author    = "Luo, Gaoxiang and Deshwal, Aryan",
+  title     = "COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier",
+  booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+  year      = "2025",
   publisher = "Association for Computational Linguistics",
 }
+```
