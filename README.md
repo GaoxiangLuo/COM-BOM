@@ -1,5 +1,8 @@
 # COM-BOM [EMNLP'25]
 
+![BoTorch](https://img.shields.io/badge/Built%20with-BoTorch-EE4C2C?logo=pytorch&logoColor=white)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+
 This repository contains the reference BoTorch implementation of COM-BOM for the following paper: <br/>
 
 > **[COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier](https://arxiv.org/abs/2510.01178)**  
