@@ -1,16 +1,17 @@
 # COM-BOM [EMNLP'25]
-
+[![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
+<a href='https://arxiv.org/abs/2510.01178'><img src='https://img.shields.io/badge/arXiv-2510.01178-brown.svg?logo=arxiv&logoColor=white'></a>
 ![BoTorch](https://img.shields.io/badge/Built%20with-BoTorch-EE4C2C?logo=pytorch&logoColor=white)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 This repository contains the reference BoTorch implementation of COM-BOM for the following paper: <br/>
 
-> **[COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier](https://arxiv.org/abs/2510.01178)**  
+> **[COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier](https://aclanthology.org/2025.emnlp-main.1027/)**  
 > [Gaoxiang Luo](https://gaoxiangluo.github.io/), [Aryan Deshwal](https://aryandeshwal.github.io/)    
 > *In Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing, 2025* 
 >
 
-[[`Paper`](https://arxiv.org/abs/2510.01178)] [[`BibTeX`](#CitingCOM-BOM)]
+[[`Paper`](https://aclanthology.org/2025.emnlp-main.1027/)] [[`BibTeX`](#CitingCOM-BOM)]
 
 ---
 ## Quickstart
@@ -67,11 +68,15 @@ uv run python test.py --config configs/mmlupro.yaml
 If you use COM-BOM in your research, find the code useful, or would like to acknowledge our work, please consider citing our paper:
 
 ```BibTeX
-@inproceedings{COMBOM,
-  author    = "Luo, Gaoxiang and Deshwal, Aryan",
-  title     = "COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier",
-  booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
-  year      = "2025",
-  publisher = "Association for Computational Linguistics",
+@inproceedings{luo-deshwal-2025-com,
+    title = "COM-BOM: Bayesian Exemplar Search for Efficiently Exploring the Accuracy-Calibration Pareto Frontier",
+    author = "Luo, Gaoxiang and Deshwal, Aryan",
+    booktitle = "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2025",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2025.emnlp-main.1027/",
+    pages = "20350--20363",
+    ISBN = "979-8-89176-332-6",
 }
 ```
