@@ -1,0 +1,24 @@
+[project]
+name = "combom-dspy"
+version = "0.1.0"
+description = "COM-BOM as a DSPy optimizer, with a GSM8K benchmark against DSPy's optimizers"
+requires-python = ">=3.12"
+dependencies = [
+    "botorch>=0.18.1",
+    "datasets>=5.0.1",
+    "dspy>=3.3.1",
+    "gpytorch>=1.15.2",
+    "matplotlib>=3.11.1",
+    "numpy>=2.5.2",
+    "openai>=2.54.0",
+    "optuna>=5.0.0",
+    "scipy>=1.18.1",
+    "sentence-transformers>=6.1.0",
+    "torch>=2.14.0",
+]
+
+[tool.ruff]
+extend = "../../pyproject.toml"
+
+[tool.ruff.lint]
+extend-per-file-ignores = { "benchmarks/**" = ["D", "E501", "E731", "E402"], "tools/**" = ["D", "E501"] }
