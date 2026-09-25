@@ -1,0 +1,1 @@
+{"ard": true, "ls_prior": "lognormal", "ls_shift": -2.0, "ls_scale": 0.5, "ls_bounds": "0.1,100", "outputscale": "gamma2", "mean": "constant", "noise": "ln-1", "restarts": 1}
