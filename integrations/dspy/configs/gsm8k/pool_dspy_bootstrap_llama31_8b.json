@@ -1,0 +1,122 @@
+[
+ {
+  "question": "Bridget counted 14 shooting stars in the night sky.  Reginald counted two fewer shooting stars than did Bridget, but Sam counted four more shooting stars than did Reginald.  How many more shooting stars did Sam count in the night sky than was the average number of shooting stars observed for the three of them?",
+  "reasoning": "14 - 2 = <<14-2=12>>12 is the number of shooting stars Reginald counted 12 + 4 = <<12+4=16>>16 is the number of shooting stars Sam counted The average number of shooting stars observed for the three of them is (14 + 12 + 16) / 3 = <<(14+12+16)/3=14>>14",
+  "answer": "2",
+  "train_index": 2
+ },
+ {
+  "question": "Sarah buys 20 pencils on Monday. Then she buys 18 more pencils on Tuesday. On Wednesday she buys triple the number of pencils she did on Tuesday. How many pencils does she have?",
+  "reasoning": "20 pencils on Monday. 18 more pencils on Tuesday. 3 times the number of pencils bought on Tuesday. 18 pencils on Tuesday. 18 pencils * 3 = <<18*3=54>>54 pencils bought on Wednesday. Total pencils bought on Wednesday, Tuesday, and Monday is 54 + 18 + 20 = <<54+18+20=92>>92 pencils.",
+  "answer": "92",
+  "train_index": 3
+ },
+ {
+  "question": "Rookie police officers have to buy duty shoes at the full price of $85, but officers who have served at least a year get a 20% discount. Officers who have served at least three years get an additional 25% off the discounted price. How much does an officer who has served at least three years have to pay for shoes?",
+  "reasoning": "20% off $85 is 20% of 85 = <<20% of 85=17>>17 less 85 - 17 = <<85-17=68>>68 The 25% discount is 25% of 68 = <<25% of 68=17>>17 less 68 - 17 = <<68-17=51>>51",
+  "answer": "51",
+  "train_index": 4
+ },
+ {
+  "question": "The average score on last week's Spanish test was 90.  Marco scored 10% less than the average test score and Margaret received 5 more points than Marco.  What score did Margaret receive on her test?",
+  "reasoning": "10% less from 90 is 90*0.9=<<90*0.9=81>>81 5 more points than that is 81+5=86",
+  "answer": "86",
+  "train_index": 5
+ },
+ {
+  "question": "A third of the contestants at a singing competition are female, and the rest are male. If there are 18 contestants in total, how many of them are male?",
+  "reasoning": "1/3 of the contestants are female, or 18 x 1/3 = <<18*1/3=6>>6 contestants. Therefore, there are 18 - 6 = <<18-6=12>>12 male contestants.",
+  "answer": "12",
+  "train_index": 6
+ },
+ {
+  "question": "Nancy bought a pie sliced it into 8 pieces. She gave 1/2 to Joe and Darcy, and she gave 1/4 to Carl. How many slices were left?",
+  "reasoning": "1/2 of 8 slices is 8/2=<<8/2=4>>4 1/4 of 8 slices is 8/4=<<8/4=2>>2 Nancy gave 4+2=<<4+2=6>>6 slices to people Nancy has 8-6=<<8-6=2>>2 slices left",
+  "answer": "2",
+  "train_index": 7
+ },
+ {
+  "question": "Megan pays $16 for a shirt that costs $22 before sales. What is the amount of the discount?",
+  "reasoning": "22-16 = <<22-16=6>>6",
+  "answer": "6",
+  "train_index": 8
+ },
+ {
+  "question": "Betty and Dora started making some cupcakes at the same time. Betty makes 10 cupcakes every hour and Dora makes 8 every hour. If Betty took a two-hour break, what is the difference between the number of cupcakes they made after 5 hours?",
+  "reasoning": "10 cupcakes every hour for 5 hours is 5*10=<<5*10=50>>50 cupcakes 8 cupcakes every hour for 5 hours is 5*8=<<5*8=40>>40 cupcakes 10 cupcakes every hour for 2 hours is 2*10=<<2*10=20>>20 cupcakes 50-40-20=<<50-40-20=10>>10",
+  "answer": "10",
+  "train_index": 10
+ },
+ {
+  "question": "John needs to replace his shoes so he decides to buy a $150 pair of Nikes and a $120 pair of work boots.  Tax is 10%.  How much did he pay for everything?",
+  "reasoning": "150+120=$<<150+120=270>>270 He payed 10% tax which is 270*.1=$<<270*.1=27>>27 So he paid $270+$27=$<<270+27=297>>297",
+  "answer": "297",
+  "train_index": 15
+ },
+ {
+  "question": "Daryl is loading crates at a warehouse and wants to make sure that they are not overloaded. Each crate can weigh up to 20kg and he has 15 crates he can fill. He has 4 bags of nails to load, each of which weighs 5kg; he has 12 bags of hammers, each of which weighs 5 kg; he also has 10 bags of wooden planks, each of which weighs 30kg and can be sub-divided. He realizes that he has too much to load and will have to leave some items out of the crates to meet the weight limit. In kg, how much is Daryl going to have to leave out of the crates?",
+  "reasoning": "20 kg is the maximum weight for each crate. He has 15 crates to fill. The total weight that can be loaded is 15 * 20 = <<15*20=300>>300 kg. He has 4 bags of nails to load, each of which weighs 5 kg, for a total of 4 * 5 = <<4*5=20>>20 kg. He has 12 bags of hammers to load, each of which weighs 5 kg, for a total of 12 * 5 = <<12*5=60>>60 kg. He has 10 bags of wooden planks to load, each of which weighs 30 kg, for a total of 10 * 30 = <<10*30=300>>300 kg. The total weight of the items to load is 20 + 60 + 300 = <<20+60+300=380>>380 kg. He has to leave out 380 - 300 = <<380-300=80>>80 kg",
+  "answer": "80",
+  "train_index": 16
+ },
+ {
+  "question": "In 2004, there were some kids at a cookout. In 2005, half the number of kids came to the cookout as compared to 2004. In 2006, 2/3 as many kids came to the cookout as in 2005. If there were 20 kids at the cookout in 2006, how many kids came to the cookout in 2004?",
+  "reasoning": "20 kids / 2/3 = <<20/2/3=30>>30 kids came to the cookout in 2005. 30 kids / 1/2 = <<30/1/2=60>>60 kids came to the cookout in 2004",
+  "answer": "60",
+  "train_index": 18
+ },
+ {
+  "question": "James splits 4 packs of stickers that have 30 stickers each.  Each sticker cost $.10.  If his friend pays for half how much did James pay?",
+  "reasoning": "4 packs of stickers with 30 stickers each is 4*30=<<4*30=120>>120 stickers Each sticker cost $.10 so the total cost is 120 stickers * $.10 = <<120*.10=12>>12 James paid for the entire cost so he payed 12 James paid for half of the cost so he paid 12/2 = <<12/2=6>>6",
+  "answer": "6",
+  "train_index": 19
+ },
+ {
+  "question": "It\u2019s spring! The gardener at Parc Municipal orders flowers. He takes 250 tulips, 375 carnations and 320 roses. Each flower is sold for 2\u20ac. Calculate the total expenses.",
+  "reasoning": "250 tulips * 2\u20ac = <<250*2=500>>500\u20ac 375 carnations * 2\u20ac = <<375*2=750>>750\u20ac 320 roses * 2\u20ac = <<320*2=640>>640\u20ac The total amount of money is 500\u20ac + 750\u20ac + 640\u20ac = <<500+750+640=1890>>1890\u20ac.",
+  "answer": "1890",
+  "train_index": 20
+ },
+ {
+  "question": "Mary does her grocery shopping on Saturday. She does her shopping only at a specific store where she is allowed a credit of $100, which must be paid in full before her next shopping trip. That week she spent the full credit limit and paid $15 of it on Tuesday and $23 of it on Thursday. How much credit will Mary need to pay before her next shopping trip?",
+  "reasoning": "100-15-23 = <<100-15-23=62>>62 dollars in credit is still due.",
+  "answer": "62",
+  "train_index": 21
+ },
+ {
+  "question": "A gumball machine has red, green, and blue gumballs. The machine has half as many blue gumballs as red gumballs. For each blue gumball, the machine has 4 times as many green gumballs. If the machine has 16 red gumballs how many gumballs are in the machine?",
+  "reasoning": "1/2 of 16 is 16/2 = <<16/2=8>>8 blue gumballs 4 times as many green gumballs as blue gumballs is 8*4 = <<8*4=32>>32 green gumballs 16+8+32 = <<16+8+32=56>>56 gumballs",
+  "answer": "56",
+  "train_index": 22
+ },
+ {
+  "question": "Delaney has to catch a bus that leaves at 8:00. a.m to school every day. He always takes 30 minutes to reach the pick-up point from his home. One day he woke up late and left his home at 7:50. How much time did he miss the bus by when he reached the pick-up point?",
+  "reasoning": "30 minutes per day * 1 hour = <<30*1=30>>30 minutes. 30 minutes per day - 10 minutes = <<30-10=20>>20 minutes",
+  "answer": "20",
+  "train_index": 23
+ },
+ {
+  "question": "Mark donates soup to the 6 homeless shelters.  Each one services 30 people and he decides to buy 10 cans of soup per person.  How many cans of soup does Mark donate?",
+  "reasoning": "6 shelters * 30 people per shelter = <<6*30=180>>180 people 10 cans of soup per person * 180 people = <<10*180=1800>>1800 cans of soup",
+  "answer": "1800",
+  "train_index": 24
+ },
+ {
+  "question": "A cafe has 9 indoor tables and 11 outdoor tables. Each indoor table has 10 chairs, and each outdoor table has 3 chairs. How many chairs are there in all?",
+  "reasoning": "9 tables with 10 chairs each = <<9*10=90>>90 chairs 11 tables with 3 chairs each = <<11*3=33>>33 chairs Total number of chairs = 90 + 33 = <<90+33=123>>123 chairs",
+  "answer": "123",
+  "train_index": 28
+ },
+ {
+  "question": "Louise is baking cakes for a gathering. She needs 60 cakes in total, and has already produced half this many. Today, she calculates how many cakes she has left to make and bakes half this amount. The next day, she again calculates how many cakes she has left to make and bakes a third of this amount. How many more cakes does Louise need to bake?",
+  "reasoning": "60 cakes / 2 = <<60/2=30>>30 cakes. She has already made half of 60 cakes, which is 30 cakes. She has 30 cakes left. She bakes half of these cakes, which is 30 cakes / 2 = <<30/2=15>>15 cakes. She has 30 - 15 = <<30-15=15>>15 cakes left. She bakes a third of these cakes, which is 15 cakes / 3 = <<15/3=5>>5 cakes. She has 15 - 5 = <<15-5=10>>10 cakes left. She has 10 cakes left to bake.",
+  "answer": "10",
+  "train_index": 29
+ },
+ {
+  "question": "Elroy decides to enter a walk-a-thon and wants to make sure he ties last year's winner's cash collection. Last year, walkers earned $4 a mile. This year walkers earn $2.75 a mile. If last year's winner collected $44, how many more miles will Elroy walk than last year's winner to collect the same amount of money?",
+  "reasoning": "4 dollars per mile 44 dollars total 44/<<4 dollars per mile 44 dollars total 44/4>>4 = <<44/4=11>>11 miles 2.75 dollars per mile 44 dollars total 44/<<2.75 dollars per mile 44 dollars total 44/2.75>>2.75 = <<44/2.75=16>>16 miles He will need to walk 16-11=<<16-11=5>>5 more miles",
+  "answer": "5",
+  "train_index": 32
+ }
+]
